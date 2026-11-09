@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+
+
+            <div class="left d-flex align-items-center justify-content-center gap-2 ms-2">
+                <i class="fa-solid fa-id-badge"></i>
+                <div class="dis">
+                    <h3 class="mt-1 mb-0">
+                        Contact<span>Hub</span>
+                    </h3>
+                    <p class="m-0">Smart Contact Manager</p>
+                </div>
+
+
+            </div>
+            <div class="right d-flex justify-content-center align-items-center gap-5 me-2">
+                <button><i class="fa-solid fa-plus"></i> Add Contact</button>
+                <i class="back fa-solid fa-bell"></i>
+                <i class="back fa-solid fa-gear"></i>
+                <div class="photo">
+                    <img src="imeges/avatar-2 (1).jpg" alt="" class="w-100 rounded-2">
+                </div>
+            </div>
+
+
+
+        </div>
+    </nav>
+    <br>
+    <br>
+
+    <section class="container sec1  ">
+        <div class="row  ">
+
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4 card-1">
+                <div class="d-flex justify-content-start align-items-center gap-3 p-2">
+                    <i
+                        class="fa-solid fa-users-line  fa-solid fa-star text-white p-2 text-center fs-5 bg-danger rounded-3 logo-1"></i>
+                    <div>
+                        <span class="fw-normal">TOTAL</span>
+                        <span id="total" class="fs-3 d-block fw-semibold">3</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 card-1">
+                <div class="d-flex justify-content-start align-items-center gap-3 p-2">
+                    <i class="fa-solid fa-star text-white p-2 text-center fs-5 icon-f"></i>
+                    <div>
+                        <span class="fw-normal">Favorites</span>
+                        <span id="favcount" class="fs-3 d-block fw-semibold"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 card-1">
+                <div class="d-flex justify-content-start align-items-center gap-3 p-2">
+
+                    <i class="fa-solid fa-heart-pulse text-center fs-5 icon-e text-white p-2"></i>
+                    <div>
+                        <span class="fw-normal">Emergency</span>
+                        <span id="emccount" class="fs-3 d-block fw-semibold">0</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="sec2 sec1  ">
+        <div class="container m-auto">
+            <h2>All Contacts</h2>
+            <p class="">Manage and organize your contacts</p>
+
+             <input onkeyup="searchContacts()" type="search" id="searchInput" class="form-control form-control-sm w-100 mx-auto my-3" placeholder="Search By name..." />
+
+
+
+
+
+
+            
+            
+        </div>
+        <div class="homer d-flex justify-content-start align-items-center position-relative">
+            <!--     LHS       -->
+
+            <div class="home mt-4 LHS">
+
+                <div class="d-flex justify-content-between align-items-end flex-wrap   LHS ">
+                    <div class=" w-50  mb-2 ">
+                        <div class="card-1 p-3 h-100">
+
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <div id="avatar" class="avatar"></div>
+
+                                <div>
+                                    <span class="fw-normal d-block mb-1" id="name"></span>
+                                    <div id="phoneNumber" class="d-flex align-items-center gap-2">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 mb-2 email">
+                                <i class="fa-solid fa-envelope"></i>
+                                <p class="mb-0"></p>
+                            </div>
+
+                            <div class="d-flex align-items-center gap-2 mb-2 location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p class="mb-0"></p>
+                            </div>
+
+                            <div class="d-flex gap-3 mb-3">
+                                <span id="group">Family</span>
+                                <span id="case">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </span>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center footer mt-auto">
+                                <div class="icons d-flex gap-3">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="icons d-flex gap-3">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                    <i class="fa-solid fa-pen"></i>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <!--       RHS         -->
+
+            <div class=" ms-4  RHS position-sticky bottom-0 top-0 h-100 ">
+                <div class="category">
+
+                    <div class="d-flex align-items-center gap-3  fav">
+                        <i class="fa-solid fa-star text-white p-2 text-center fs-5 icon-f"></i>
+                        <div>
+                            <span>Favorites</span>
+                            <p class="fw-bolder d-block mb-1 quick">Quick access to starred contacts</p>
+                            <div id="phoneNumber" class="d-flex align-items-center gap-2">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="empty h-auto">
+                        <br>
+                        <div class="d-flex flex-column  ms-2 gap-3 mt-1">
+                            <div class="fav-list d-flex flex-column  gap-3 mb-3">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+
+                <div class="category">
+
+                    <div class="d-flex align-items-center gap-3  emg">
+                        <i class="fa-solid fa-heart-pulse text-center fs-5 icon-e text-white p-2"></i>
+                        <div>
+                            <span>Emergency</span>
+                            <p class="fw-bolder d-block mb-1 quick">Important contacts for urgent calls</p>
+                            <div id="phoneNumber" class="d-flex align-items-center gap-2">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="empty h-auto">
+                        <br>
+                        <div class="d-flex flex-column  ms-2 gap-3 mt-1">
+                            <div class="emg-list d-flex flex-column  gap-3 mb-3">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div id="form"
+        class="forma w-100 position-absolute z-100 top-0 start-0  bottom-0 d-flex justify-content-center align-items-center card-footer d-none ">
+        <div class="add m-auto ">
+
+
+
+            <div class="title d-flex justify-content-between align-items-center ">
+                <h3 class="h5">Add New Contact</h3>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <br>
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <img src="imeges/avatar-1 (4).jpg" alt="" class="">
+                <span class="Change">Change Photo</span>
+                <input type="file" class="d-none" accept="image/*" id="avatarInput">
+            </div>
+            <label for="name" class="d-block">Full Name</label>
+            <input type="text" name="" id="inputName" class="form-control p-2 mb-2" placeholder="Enter Full Name">
+            <label for="phone" class="d-block">Phone Number</label>
+            <input type="number" name="" id="inputPhone" class="form-control p-2 mb-2" placeholder="Enter phone Number">
+            <label for="email" class="d-block">Email</label>
+            <input type="email" name="" id="inputEmail" class="form-control p-2 mb-2" placeholder="Enter Your Email">
+            <label for="Address" class="d-block">Address</label>
+            <input type="text" name="" id="inputAddress" class="form-control p-2 mb-2" placeholder="Enter Your Address">
+            <label for="group" class="d-block">Group</label>
+            <select class="form-select" aria-label="Default select example" placeholder="Select Group">
+
+                <option value="select">Select Group</option>
+                <option value="Family">Family</option>
+                <option value="Friends">Friends</option>
+                <option value="Work">Work</option>
+                <option value="Campany">campany</option>
+                <option value="Other">Other</option>
+            </select>
+            <br>
+            <label for="note" class="d-block"> Notes</label>
+            <div class="form-floating">
+                <textarea id="note" class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Add Note About This Contact</label>
+            </div>
+            <br>
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="m-3">
+                    <input type="checkbox" id="fav" class="">
+                    <label for="fav"> <i class="fa-solid fa-star text-warning fs-6"></i> Favorite</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="emg">
+                    <label for="emg"> <i class="fa-solid fa-heart-pulse text-danger fs-6"></i> Emargency</label>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-between align-items-center btn ">
+                <button class="btn-c">Cancel</button>
+                <button class="btn-s">Save Contact</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="Js/main.js"></script>
+</body>
+
+
+
+
+
+
+</html>
